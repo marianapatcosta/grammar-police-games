@@ -1,0 +1,52 @@
+{
+  "game": {
+    "back": "voltar",
+    "best": "melhor resultado",
+    "cancel": "cancelar",
+    "gameOver": "Fim do Jogo",
+    "getReady": "Prepara-te",
+    "instructionsSpace": "Pressiona ",
+    "instructionsSpace2": " para voar mais alto",
+    "instructionsSpace3": " para disparar",
+    "instructionsArrows": "Pressiona ",
+    "instructionsArrows2": " para mover a nave espacial",
+    "instructionsP": "Pressiona ",
+    "instructionsP2": " para pausar/jogar",
+    "instructionsR": "Pressiona ",
+    "instructionsR2": " para reiniciar o jogo",
+    "instructionsQ": "Pressiona ",
+    "instructionsQ2": " para desistir",
+    "instructionsStart": "Clica ou pressiona a tecla ",
+    "instructionsStart2": " para jogar!",
+    "medal": "medalha",
+    "new": "novo",
+    "ok": "ok",
+    "paused": "pausa",
+    "play": "jogar",
+    "quit": "desistir?",
+    "quitMessage": "Tens a certeza que queres desistir?",
+    "restart": "jogar novamente",
+    "score": "resultado",
+    "won": "Ganhaste!!!"
+  },
+  "grammarInvaders": {
+    "title": "Grammar Invaders",
+    "description": "Baseado no popular jogo Space Invaders"
+  },
+  "header": {
+    "title": "Jogos da Policia da Gramatica"
+  },
+  "home": {
+    "title": "Escolhe um jogo!"
+  },
+  "footer": {
+    "authorName": "Mariana Costa",
+    "developedBy": "Concebido e desenvolvido por",
+    "github": "https://github.com/marianapatcosta",
+    "linkedin": "https://www.linkedin.com/in/marianapatcosta/"
+  },
+  "slappyGrammar": {
+    "title": "Slappy Grammar",
+    "description": "Baseado no popular jogo Flappy Bird"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "game": {
+    "back": "back",
+    "best": "best score",
+    "cancel": "cancel",
+    "gameOver": "Game Over",
+    "getReady": "Get Ready",
+    "instructionsSpace": "Press ",
+    "instructionsSpace2": " key to fly higher",
+    "instructionsSpace3": " key to shoot",
+    "instructionsArrows": "Press ",
+    "instructionsArrows2": " key to move the space ship",
+    "instructionsP": "Press ",
+    "instructionsP2": " key to pause/play",
+    "instructionsR": "Press ",
+    "instructionsR2": " key to restart the game",
+    "instructionsQ": "Press ",
+    "instructionsQ2": " key to quit",
+    "instructionsStart": "Click or press ",
+    "instructionsStart2": " key to start!",
+    "medal": "medal",
+    "new": "new",
+    "ok": "ok",
+    "paused": "paused",
+    "play": "play",
+    "quit": "quit?",
+    "quitMessage": "Are you sure you want to quit?",
+    "restart": "play again",
+    "score": "score",
+    "won": "You won!!!"
+  },
+  "grammarInvaders": {
+    "title": "Grammar Invaders",
+    "description": "Based on the well-known Space Invaders game"
+  },
+  "header": {
+    "title": "Grammar Police Games"
+  },
+  "home": {
+    "title": "Choose a game!"
+  },
+  "footer": {
+    "authorName": "Mariana Costa",
+    "developedBy": "Design and developed by",
+    "github": "https://github.com/marianapatcosta",
+    "linkedin": "https://www.linkedin.com/in/marianapatcosta/"
+  },
+  "slappyGrammar": {
+    "title": "Slappy Grammar",
+    "description": "Based on the well-known Flappy Bird game"
+  }
+}
