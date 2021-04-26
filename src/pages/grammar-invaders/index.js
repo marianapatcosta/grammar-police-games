@@ -41,7 +41,7 @@ import {
   StyledScore,
   StyledBackButton,
 } from './StyledGame.js'
-import { Autch, GameOver, BattleTheme, Boom } from '../../assets/audio'
+import { Autch, GameOver, BattleTheme, Boom, Yupi } from '../../assets/audio'
 
 const Game = () => {
   const [t] = useTranslation()
@@ -71,6 +71,7 @@ const Game = () => {
 
   const autchSound = useMemo(() => new Audio(Autch), [])
   const gameOverSound = useMemo(() => new Audio(GameOver), [])
+  const gameWonSound = useMemo(() => new Audio(Yupi), [])
   const themeMusic = useMemo(() => new Audio(BattleTheme), [])
 
   const toggleAudio = () => setHasAudio(prevHasAudio => !prevHasAudio)
@@ -222,6 +223,7 @@ const Game = () => {
 
         if (!enemiesData?.length) {
           setGameStage(GAME_STAGE.WON)
+          gameWonSound.play()
           findBestScore()
           return clearInterval(timerId)
         }
@@ -262,14 +264,6 @@ const Game = () => {
                   bulletTop > 0 &&
                   enemyBottom > 0
                 ) {
-                  console.log({
-                    bulletRight,
-                    bulletLeft,
-                    enemyRight,
-                    enemyleLeft,
-                    bulletTop,
-                    enemyBottom,
-                  })
                   setGameStage(GAME_STAGE.ENEMY_HIT)
                   enemies.current?.onEnemyHit(enemyIndex)
                   spaceShip.current?.onBulletHit(bulletIndex)
@@ -279,7 +273,15 @@ const Game = () => {
       }, GRAMMAR_INVADERS_TIME_INTERVAL)
     }
     return () => clearInterval(timerId)
-  }, [isPlaying, gameStage, lives, hasAudio, onGameOver, findBestScore])
+  }, [
+    isPlaying,
+    gameStage,
+    gameWonSound,
+    lives,
+    hasAudio,
+    onGameOver,
+    findBestScore,
+  ])
 
   const renderSubtitle = () => {
     const subtitles = {

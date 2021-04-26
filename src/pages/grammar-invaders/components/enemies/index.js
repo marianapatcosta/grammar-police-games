@@ -86,7 +86,6 @@ const Enemies = forwardRef(({ enemiesNumber, gameStage, updateScore }, ref) => {
         sentence,
         backgroundColor: enemiesColors[getRandomInt(0, enemiesColors.length)],
         left: getLeft(index),
-
         top: getTop(index),
       })),
     [sentencesToDisplay, getLeft, getTop]
@@ -113,8 +112,13 @@ const Enemies = forwardRef(({ enemiesNumber, gameStage, updateScore }, ref) => {
           index === enemyIndex ? { ...enemyProps, isHit: true } : enemyProps
         )
       )
-      removeEnemy(enemyIndex)
       const timerId = setTimeout(() => {
+        setEnemiesProps(prevEnemiesProps =>
+          prevEnemiesProps.map((enemyProps, index) =>
+            index === enemyIndex ? { ...enemyProps, isHit: false } : enemyProps
+          )
+        )
+        removeEnemy(enemyIndex)
         clearTimeout(timerId)
       }, ENEMY_HIT_TIME_INTERVAL)
     },

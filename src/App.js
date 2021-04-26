@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react'
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from 'react-router-dom'
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { Header } from './components'

@@ -89,7 +89,7 @@ export const GlobalStyle = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
 
       @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-          font-size: 1rem;;
+          font-size: 1rem;
       }
   }
 
