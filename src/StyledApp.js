@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const StyledMain = styled.main`
   padding-top: 7.5rem;
-  min-height: calc(100vh - 10rem);
+  min-height: calc(100vh - 11.5rem);
 `
 
 export const StyledFooter = styled.footer`
