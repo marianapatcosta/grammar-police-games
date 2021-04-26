@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/grammar-police-games/static/js/main.b9f2a884.chunk.js",
-    "main.js.map": "/grammar-police-games/static/js/main.b9f2a884.chunk.js.map",
+    "main.js": "/grammar-police-games/static/js/main.4a337875.chunk.js",
+    "main.js.map": "/grammar-police-games/static/js/main.4a337875.chunk.js.map",
     "runtime-main.js": "/grammar-police-games/static/js/runtime-main.f9a675a3.js",
     "runtime-main.js.map": "/grammar-police-games/static/js/runtime-main.f9a675a3.js.map",
     "static/js/2.4e0e2758.chunk.js": "/grammar-police-games/static/js/2.4e0e2758.chunk.js",
@@ -25,7 +25,7 @@
     "static/media/close.81fd709f.svg": "/grammar-police-games/static/media/close.81fd709f.svg",
     "static/media/game-over.e6cf039c.mp3": "/grammar-police-games/static/media/game-over.e6cf039c.mp3",
     "static/media/github.d1bb13ce.svg": "/grammar-police-games/static/media/github.d1bb13ce.svg",
-    "static/media/grammar-invaders.58f84745.gif": "/grammar-police-games/static/media/grammar-invaders.58f84745.gif",
+    "static/media/grammar-invaders.a22515e3.gif": "/grammar-police-games/static/media/grammar-invaders.a22515e3.gif",
     "static/media/heart.fb824694.svg": "/grammar-police-games/static/media/heart.fb824694.svg",
     "static/media/junebug.regular.ada96f10.ttf": "/grammar-police-games/static/media/junebug.regular.ada96f10.ttf",
     "static/media/linkedin.6c32ad69.svg": "/grammar-police-games/static/media/linkedin.6c32ad69.svg",
@@ -45,11 +45,12 @@
     "static/media/united-kingdom.7bb03f7e.svg": "/grammar-police-games/static/media/united-kingdom.7bb03f7e.svg",
     "static/media/unmute.941a1bad.svg": "/grammar-police-games/static/media/unmute.941a1bad.svg",
     "static/media/urban-decay.6c98046e.ttf": "/grammar-police-games/static/media/urban-decay.6c98046e.ttf",
-    "static/media/wall-background.498e03da.svg": "/grammar-police-games/static/media/wall-background.498e03da.svg"
+    "static/media/wall-background.498e03da.svg": "/grammar-police-games/static/media/wall-background.498e03da.svg",
+    "static/media/yupi.ec87c463.mp3": "/grammar-police-games/static/media/yupi.ec87c463.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.f9a675a3.js",
     "static/js/2.4e0e2758.chunk.js",
-    "static/js/main.b9f2a884.chunk.js"
+    "static/js/main.4a337875.chunk.js"
   ]
 }
