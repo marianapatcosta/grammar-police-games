@@ -95,16 +95,6 @@ export const StyledResults = styled.div`
   }
 `
 
-export const StyledLives = styled.div`
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 1.2rem;
-    margin: 0 0.1rem;
-  }
-`
-
 export const StyledScore = styled.div`
   margin-left: 1rem;
   font-size: 300%;

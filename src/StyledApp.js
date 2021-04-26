@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledMain = styled.main`
-  padding-top: 6.5rem;
+  padding-top: 7.5rem;
   min-height: calc(100vh - 10rem);
 `
 

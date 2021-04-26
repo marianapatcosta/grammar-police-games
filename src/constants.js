@@ -1,5 +1,5 @@
 import { Portugal, Uk } from './assets/icons'
-import { SlappyGrammar } from './assets/images'
+import { GrammarInvaders, SlappyGrammar } from './assets/images'
 
 export const locales = [
   {
@@ -44,7 +44,7 @@ export const gamesMetadata = [
   },
   {
     id: GAMES.GRAMMAR_INVADERS,
-    imageSrc: SlappyGrammar,
+    imageSrc: GrammarInvaders,
     path: 'grammar-invaders',
   },
 ]
@@ -150,30 +150,33 @@ export const sentencesEN = [
   'The company celebrates it’s fifth year.',
   'Piece and Love.',
   'Random staff.',
+  'I enjoyed the potato’s.',
+  'I love your shoes’s.',
+  'It’s between you an I.',
+  'Whose that girl?',
+  'Your a nice person.',
+  'Something is missing in my hart.',
+  'I’m board.',
+  'I like sweat tea.',
+  'Make the dfferance.',
+  'No smoking aloud.',
   'It is a hand zone section.',
   'They go to they’re office.',
   'It’s over their!',
   'The company celebrates it’s fifth year.',
   'Piece and Love.',
   'Random staff.',
-  'It is a hand zone section.',
-  'They go to they’re office.',
-  'It’s over their!',
-  'The company celebrates it’s fifth year.',
-  'Piece and Love.',
-  'Random staff.',
-  'It is a hand zone section.',
-  'They go to they’re office.',
-  'It’s over their!',
-  'The company celebrates it’s fifth year.',
-  'Piece and Love.',
-  'Random staff.',
-  'It is a hand zone section.',
-  'They go to they’re office.',
-  'It’s over their!',
-  'The company celebrates it’s fifth year.',
-  'Piece and Love.',
-  'Random staff.',
+  'I enjoyed the potato’s.',
+  'I love your shoes’s.',
+  'It’s between you an I.',
+  'Whose that girl?',
+  'Your a nice person.',
+  'Something is missing in my hart.',
+  'I’m board.',
+  'I like sweat tea.',
+  'Make the dfferance.',
+  'No smoking aloud.',
+  'Your the best!',
 ]
 
 // game configs, in rem
@@ -190,7 +193,7 @@ export const SCORE_INCREASE = 5
 
 export const SLAPPY_GRAMMAR_TIME_INTERVAL = 30 // in ms
 
-export const SENTENCE_NUMBER = 5
+export const SENTENCE_NUMBER = 10
 
 export const OBSTACLES_NUMBER = 2
 

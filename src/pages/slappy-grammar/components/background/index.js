@@ -25,11 +25,11 @@ const Background = ({ sentencesNumber, gameStage }) => {
     let timerId
     if (isPlaying) {
       setSentencesToDisplay(
-        getRandomizedSentences(sentences).slice(0, sentencesNumber * 2)
+        getRandomizedSentences(sentences).slice(0, sentencesNumber)
       )
       timerId = setInterval(() => {
         setSentencesToDisplay(
-          getRandomizedSentences(sentences).slice(0, sentencesNumber * 2)
+          getRandomizedSentences(sentences).slice(0, sentencesNumber)
         )
       }, BACKGROUND_TIME_INTERVAL)
     }

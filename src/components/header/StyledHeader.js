@@ -39,7 +39,6 @@ export const StyledHeaderButton = styled.button`
   font: inherit;
   margin-left: 0.5rem;
   cursor: pointer;
-  border-radius: 50%;
   box-shadow: 0.0625rem 0.0625rem 0.2rem ${({ theme }) => theme.colors.black};
 
   :hover {

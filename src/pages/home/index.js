@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <StyledHome>
       <StyledHomeTitle>{t('home.title')}</StyledHomeTitle>
-      <StyledTileContainer className='home__tile-container'>
+      <StyledTileContainer>
         {gamesMetadata.map(({ id, imageSrc, path }) => (
           <Tile
             key={`game-${id}`}

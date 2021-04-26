@@ -22,8 +22,8 @@ const Header = ({ title, className }) => {
 
   return (
     <StyledHeader className={className}>
-      <StyledHeaderTitle className='header__title'>{title}</StyledHeaderTitle>
-      <StyledHeaderLocales className='header__locales'>
+      <StyledHeaderTitle>{title}</StyledHeaderTitle>
+      <StyledHeaderLocales>
         {locales.map(({ icon, language, acronymum }) => (
           <StyledHeaderButton
             aria-label={`click to choose ${language} language`}

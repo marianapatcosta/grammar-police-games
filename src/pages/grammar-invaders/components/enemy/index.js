@@ -26,7 +26,7 @@ Enemy.defaultProps = {
   left: 0,
   sentence: '',
   isHit: false,
-  backgroundColor: '#ffffff',
+  backgroundColor: '#fff',
 }
 
 export default Enemy
