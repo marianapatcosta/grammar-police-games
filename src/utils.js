@@ -18,3 +18,5 @@ export const getRandomizedSentences = sentences => {
   }
   return randomizedSentences
 }
+
+export const isTouchScreen = () => window.matchMedia('(hover: none)').matches

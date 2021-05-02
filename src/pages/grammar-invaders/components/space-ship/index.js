@@ -23,27 +23,11 @@ import { StyledSpaceShip } from './StyledSpaceShip.js'
 const SpaceShip = forwardRef(({ gameStage, hasAudio }, ref) => {
   const [spaceShipLeft, setSpaceShipLeft] = useState(SPACE_SHIP_LEFT)
   const [bullets, setBullets] = useState([])
+  const [initialX, setInitialX] = useState([])
   const isHit = gameStage === GAME_STAGE.OVER || gameStage === GAME_STAGE.HIT
 
   useImperativeHandle(ref, () => ({
-    move: direction => {
-      if (
-        direction === DIRECTIONS.LEFT &&
-        spaceShipLeft - SPACE_SHIP_MOVE > 0
-      ) {
-        setSpaceShipLeft(
-          prevSpaceShipLeft => prevSpaceShipLeft - SPACE_SHIP_MOVE
-        )
-      }
-      if (
-        direction === DIRECTIONS.RIGHT &&
-        spaceShipLeft + SPACE_SHIP_WIDTH + SPACE_SHIP_MOVE <= GAME_WIDTH
-      ) {
-        setSpaceShipLeft(
-          prevSpaceShipLeft => prevSpaceShipLeft + SPACE_SHIP_MOVE
-        )
-      }
-    },
+    move: direction => moveSpaceShip(direction),
     shoot: () => {
       if (gameStage !== GAME_STAGE.PLAY) return
       setBullets(prevBullets => [
@@ -88,6 +72,24 @@ const SpaceShip = forwardRef(({ gameStage, hasAudio }, ref) => {
     )
   }
 
+  const moveSpaceShip = direction => {
+    if (direction === DIRECTIONS.LEFT && spaceShipLeft - SPACE_SHIP_MOVE > 0) {
+      setSpaceShipLeft(prevSpaceShipLeft => prevSpaceShipLeft - SPACE_SHIP_MOVE)
+    }
+    if (
+      direction === DIRECTIONS.RIGHT &&
+      spaceShipLeft + SPACE_SHIP_WIDTH + SPACE_SHIP_MOVE <= GAME_WIDTH
+    ) {
+      setSpaceShipLeft(prevSpaceShipLeft => prevSpaceShipLeft + SPACE_SHIP_MOVE)
+    }
+  }
+
+  const onSpaceShipSwipe = event => {
+    const currentX = event.touches[0].clientX
+    const direction = currentX > initialX ? DIRECTIONS.RIGHT : DIRECTIONS.LEFT
+    moveSpaceShip(direction)
+  }
+
   useEffect(() => {
     let timerId
 
@@ -110,6 +112,8 @@ const SpaceShip = forwardRef(({ gameStage, hasAudio }, ref) => {
         isHit={isHit}
         src={SpaceShipImage}
         alt='space ship'
+        onTouchStart={event => setInitialX(event.touches[0].clientX)}
+        onTouchMove={onSpaceShipSwipe}
       />
 
       {bullets.map((bulletProps, index) => (

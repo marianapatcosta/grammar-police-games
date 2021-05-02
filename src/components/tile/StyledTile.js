@@ -1,15 +1,18 @@
 import styled from 'styled-components'
 
 export const StyledTile = styled.button`
-  width: 22rem;
-  height: 20rem;
+  max-width: 22rem;
+  max-height: 20rem;
+  width: 100%;
+  height: 100%;
   border: none;
   background-color: ${({ theme }) => theme.colors.blue1};
   color: ${({ theme }) => theme.colors.white};
   font: inherit;
   cursor: pointer;
   box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5);
-  padding: 0 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,15 +30,17 @@ export const StyledTile = styled.button`
 export const StyledTitle = styled.h4``
 
 export const StyledImage = styled.img`
-  width: 18rem;
-  height: 11.4rem;
+  width: 90%;
+  height: calc(90% / 1.58);
   box-shadow: 0.25rem 0.25rem 0.7rem rgb(0, 0, 0, 0.7);
   border-radius: 0.25rem;
+  margin: 1rem 2rem;
 `
 
 export const StyledImagePlaceholder = styled.div`
-  width: 18rem;
-  height: 11.4rem;
+  width: 90%;
+  height: calc(90% / 1.58);
+  margin: 1rem 2rem;
 `
 
 export const StyledDescription = styled.p`

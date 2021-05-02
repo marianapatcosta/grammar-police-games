@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Medal } from '../../../../assets/icons/index.js'
 import { GAME_STAGE } from '../../../../constants.js'
+import { isTouchScreen } from '../../../../utils.js'
 import {
   StyledBoard,
   StyledBoardOver,
@@ -13,48 +14,57 @@ import {
 
 const Board = ({ gameStage, score, bestScore, className }) => {
   const [t, i18n] = useTranslation()
+  const isTouchStart = isTouchScreen() && gameStage === GAME_STAGE.START
 
-  const renderBoardStart = () => (
-    <>
-      <p>
-        {t('game.instructionsSpace')}
-        <kbd>Space</kbd>
-        {t('game.instructionsSpace3')}
-      </p>
-      <p>
-        {t('game.instructionsArrows')}
-        <kbd>
-          <big>
+  const renderBoardStart = () =>
+    isTouchScreen() ? (
+      <>
+        <p>{t('game.howToPlay')}</p>
+        <p>{t('game.instructionsTap3')}</p>
+        <p>{t('game.instructionsTap4')}</p>
+        <p>{t('game.instructionsStart3')}</p>
+      </>
+    ) : (
+      <>
+        <p>
+          {t('game.instructionsSpace')}
+          <kbd>Space</kbd>
+          {t('game.instructionsSpace3')}
+        </p>
+        <p>
+          {t('game.instructionsArrows')}
+          <kbd>
             <big>
-              {' '}
-              <big>&larr;&rarr;</big>
+              <big>
+                {' '}
+                <big>&larr;&rarr;</big>
+              </big>
             </big>
-          </big>
-        </kbd>
-        {t('game.instructionsArrows2')}
-      </p>
-      <p>
-        {t('game.instructionsP')}
-        <kbd>P</kbd>
-        {t('game.instructionsP2')}
-      </p>
-      <p>
-        {t('game.instructionsR')}
-        <kbd>R</kbd>
-        {t('game.instructionsR2')}
-      </p>
-      <p>
-        {t('game.instructionsQ')}
-        <kbd>Q</kbd>
-        {t('game.instructionsQ2')}
-      </p>
-      <p>
-        {t('game.instructionsStart')}
-        <kbd>P</kbd>
-        {t('game.instructionsStart2')}
-      </p>
-    </>
-  )
+          </kbd>
+          {t('game.instructionsArrows2')}
+        </p>
+        <p>
+          {t('game.instructionsP')}
+          <kbd>P</kbd>
+          {t('game.instructionsP2')}
+        </p>
+        <p>
+          {t('game.instructionsR')}
+          <kbd>R</kbd>
+          {t('game.instructionsR2')}
+        </p>
+        <p>
+          {t('game.instructionsQ')}
+          <kbd>Q</kbd>
+          {t('game.instructionsQ2')}
+        </p>
+        <p>
+          {t('game.instructionsStart')}
+          <kbd>P</kbd>
+          {t('game.instructionsStart2')}
+        </p>
+      </>
+    )
 
   const renderBoardOver = () => (
     <>
@@ -77,11 +87,15 @@ const Board = ({ gameStage, score, bestScore, className }) => {
           </div>
         </StyledResults>
       </StyledBoardOver>
-      <p>
-        {t('game.instructionsR')}
-        <kbd>R</kbd>
-        {t('game.instructionsR2')}
-      </p>
+      {isTouchScreen() ? (
+        <p>{t('game.instructionsTap')}</p>
+      ) : (
+        <p>
+          {t('game.instructionsR')}
+          <kbd>R</kbd>
+          {t('game.instructionsR2')}
+        </p>
+      )}
     </>
   )
 
@@ -96,7 +110,11 @@ const Board = ({ gameStage, score, bestScore, className }) => {
   }
 
   return (
-    <StyledBoard isPT={i18n.language === 'pt'} className={className}>
+    <StyledBoard
+      isPT={i18n.language === 'pt'}
+      isTouchStart={isTouchStart}
+      className={className}
+    >
       {renderBoardContent()}
     </StyledBoard>
   )
