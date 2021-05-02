@@ -141,6 +141,10 @@ export const sentencesPT = [
   'Prontos, é isso.',
   'Houveram muitos comentários.',
   'Vê no banco de traz!',
+  'É tudo o que eu sempre quiz!',
+  'Lembras-te-me que tenho que tratar disso.',
+  'Jantas te bem?',
+  'Olha para o que fases!',
 ]
 
 export const sentencesEN = [
@@ -152,7 +156,7 @@ export const sentencesEN = [
   'Random staff.',
   'I enjoyed the potato’s.',
   'I love your shoes’s.',
-  'It’s between you an I.',
+  'It’s between you and I.',
   'Whose that girl?',
   'Your a nice person.',
   'Something is missing in my hart.',
@@ -168,7 +172,7 @@ export const sentencesEN = [
   'Random staff.',
   'I enjoyed the potato’s.',
   'I love your shoes’s.',
-  'It’s between you an I.',
+  'It’s between you and I.',
   'Whose that girl?',
   'Your a nice person.',
   'Something is missing in my hart.',
@@ -181,7 +185,8 @@ export const sentencesEN = [
 
 // game configs, in rem
 
-export const GAME_WIDTH = 55
+export const GAME_WIDTH =
+  window.innerWidth < 880 /* px */ ? window.innerWidth / 16 - 1 : 55 // -1 due to lateral 0.5rem margin
 
 export const GAME_HEIGHT = 35
 
@@ -197,7 +202,7 @@ export const SENTENCE_NUMBER = 10
 
 export const OBSTACLES_NUMBER = 2
 
-export const BIRD_LEFT = 8
+export const BIRD_LEFT = window.innerWidth < 880 /* px */ ? 4 : 8
 
 export const BIRD_TOP = 6.25
 
@@ -243,13 +248,13 @@ export const SPACE_SHIP_LEFT = (GAME_WIDTH - SPACE_SHIP_WIDTH) / 2
 
 export const SPACE_SHIP_MOVE = 2
 
-export const ENEMIES_PER_ROW = 5
+export const ENEMIES_PER_ROW = window.innerWidth < 880 ? 3 : 5
 
-export const ENEMY_WIDTH = 8.7
+export const ENEMY_WIDTH = window.innerWidth < 880 ? 6 : 8.7
 
 export const ENEMY_HEIGHT = 4
 
-export const DISTANCE_BETWEEN_ENEMIES = 0.5 //1
+export const DISTANCE_BETWEEN_ENEMIES = 0.5
 
 export const ENEMY_LEFT =
   (GAME_WIDTH -

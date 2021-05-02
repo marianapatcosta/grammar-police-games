@@ -1,8 +1,13 @@
 import styled from 'styled-components'
 
 export const StyledMain = styled.main`
-  padding-top: 7.5rem;
-  min-height: calc(100vh - 11.5rem);
+  padding-top: 4rem;
+  min-height: calc(100vh - 8rem);
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-top: 6rem;
+    min-height: calc(100vh - 9.5rem);
+  }
 `
 
 export const StyledFooter = styled.footer`

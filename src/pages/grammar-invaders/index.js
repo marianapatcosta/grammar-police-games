@@ -42,6 +42,7 @@ import {
   StyledBackButton,
 } from './StyledGame.js'
 import { Autch, GameOver, BattleTheme, Boom, Yupi } from '../../assets/audio'
+import { isTouchScreen } from '../../utils'
 
 const Game = () => {
   const [t] = useTranslation()
@@ -141,6 +142,7 @@ const Game = () => {
     const clickHandlers = {
       [GAME_STAGE.START]: () => setGameStage(GAME_STAGE.PLAY),
       [GAME_STAGE.PLAY]: spaceShip.current.shoot,
+      [GAME_STAGE.OVER]: () => setGameStage(GAME_STAGE.START),
     }
     clickHandlers[gameStage] && clickHandlers[gameStage]()
   }
@@ -348,11 +350,13 @@ const Game = () => {
             hasAudio={hasAudio}
           />
         </StyledGamePlayground>
-        <StyledBackButton
-          onClick={() => history.push('/')}
-          label={t('game.back')}
-          icon={Back}
-        />
+        {!isTouchScreen() && (
+          <StyledBackButton
+            onClick={() => history.push('/')}
+            label={t('game.back')}
+            icon={Back}
+          />
+        )}
       </StyledGame>
       {showModal && (
         <Modal

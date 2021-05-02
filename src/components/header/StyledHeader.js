@@ -4,9 +4,9 @@ export const StyledHeader = styled.header`
   position: fixed;
   left: 0;
   top: 0;
-  padding: 0 3rem;
+  padding: 0 0.5rem;
   box-sizing: border-box;
-  height: 6rem;
+  height: 4rem;
   width: 100%;
   display: flex;
   align-items: center;
@@ -14,15 +14,28 @@ export const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.blue1};
   box-shadow: 0 0.125rem 0.125rem ${({ theme }) => theme.colors.black};
   z-index: 10;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 0 2rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 0 4rem;
+    height: 6rem;
+  }
 `
 
 export const StyledHeaderTitle = styled.h2`
-  font-size: 130%;
+  font-size: 120%;
   font-weight: 400;
   color: ${({ theme }) => theme.colors.white};
   text-transform: uppercase;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 130%;
+  }
 `
 
 export const StyledHeaderLocales = styled.div`

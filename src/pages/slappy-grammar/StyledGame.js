@@ -7,27 +7,43 @@ export const StyledGame = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 55rem;
-  margin: 0 auto;
+  width: ${GAME_WIDTH}rem;
+  margin-left: 0.5rem;
   font-family: ${({ theme }) => theme.fonts.game};
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    margin-left: 2rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 0 auto;
+  }
 `
 
 export const StyledGameHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  margin: 3rem 0 0;
+  padding: 1rem 0;
   user-select: none;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    margin: 3rem 0 0;
+    padding: 1rem;
+  }
 `
 
 export const StyledGameTitle = styled.h3`
-  font-size: 150%;
+  font-size: 130%;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.orange};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 150%;
+  }
 `
 
 export const StyledGamePlayground = styled.div`
@@ -43,23 +59,38 @@ export const StyledGamePlayground = styled.div`
 
 export const StyledGameSubtitle = styled.h4`
   position: absolute;
-  top: 10rem;
+  top: 12rem;
   right: 0;
   left: 0;
   margin: 0 auto;
-  font-size: 300%;
+  font-size: 250%;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    top: 10rem;
+  }
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 300%;
+  }
 `
 
 export const StyledBoard = styled(Board)`
   position: absolute;
   bottom: 4rem;
-  right: 2rem;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    right: 2rem;
+    left: revert;
+  }
 `
 
 export const StyledGameData = styled.div`

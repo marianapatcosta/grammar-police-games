@@ -49,10 +49,15 @@ export const StyledEnemy = styled.div`
     box-sizing: border-box;
     font-family: ${({ theme }) => theme.fonts.primary};
     font-style: italic;
-    font-size: 90%;
+    font-size: 80%;
+    line-height: 0.8rem;
     text-transform: none;
     color: ${({ theme }) => theme.colors.font};
     overflow: hidden;
+
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      font-size: 90%;
+    }
 
     :after {
       animation: ${shine} 3s ease-in-out infinite;

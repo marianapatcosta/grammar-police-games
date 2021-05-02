@@ -12,6 +12,7 @@ import {
   BIRD_TOP,
   FLY_JUMP,
   GAME_GRAVITY,
+  SLAPPY_GRAMMAR_TIME_INTERVAL,
 } from '../../../../constants.js'
 import { StyledBird } from './StyledBird.js'
 
@@ -33,7 +34,7 @@ const Bird = forwardRef(({ gameStage }, ref) => {
     if (gameStage === GAME_STAGE.PLAY && isFlying) {
       timerId = setInterval(() => {
         setBirdTop(prevBirdTop => prevBirdTop + GAME_GRAVITY)
-      }, 30)
+      }, SLAPPY_GRAMMAR_TIME_INTERVAL)
     }
 
     if (gameStage === GAME_STAGE.START) {

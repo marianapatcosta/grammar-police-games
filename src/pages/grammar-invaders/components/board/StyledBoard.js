@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import { isTouchScreen } from '../../../../utils'
 
 export const StyledBoard = styled.div`
   position: absolute;
-  width: 24rem;
-  height: 16.5rem;
+  width: 23rem;
+  height: 15rem;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -12,15 +13,32 @@ export const StyledBoard = styled.div`
   background-color: ${({ theme }) => theme.colors.red};
   box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.3) inset;
   border-radius: 0.3rem;
-  font-size: 65%;
+  font-size: 75%;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
   z-index: 1;
 
-  ${({ isPT }) => isPT && `width: 25rem;`}
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 16.5rem;
+  }
+
+  ${({ isPT }) =>
+    isPT &&
+    `   
+    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 25rem;
+    }`}
+
+  ${({ isTouchStart }) =>
+    isTouchStart &&
+    `
+      width: 19.5rem;
+      height: 10rem;
+  `}
+
 
   p {
-    margin-top: 1rem;
+    margin-top: ${isTouchScreen() ? '0' : '1rem'};
 
     kbd {
       font-family: ${({ theme }) => theme.fonts.game};
@@ -40,10 +58,16 @@ export const StyledBoard = styled.div`
     }
 
     :first-child {
-      margin-top: 0rem;
+      margin-top: 0;
+      -webkit-text-fill-color: ${({ theme }) =>
+        isTouchScreen() ? theme.colors.font : theme.colors.white};
+      -webkit-text-stroke: 0.063rem
+        ${({ theme }) =>
+          isTouchScreen() ? theme.colors.red : theme.colors.font};
     }
 
     :last-child {
+      display: block;
       margin-top: 2rem;
       margin-bottom: 0;
       font-size: 120%;
@@ -62,9 +86,13 @@ export const StyledBoardOverTitle = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
-  font-size: 130%;
+  font-size: 110%;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.red};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.blue1};
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: 130%;
+  }
 `
 
 export const StyledMedalWrapper = styled.div`
