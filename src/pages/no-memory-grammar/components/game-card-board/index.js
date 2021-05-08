@@ -1,0 +1,116 @@
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { GameCardBack } from '../../../../assets/images/index.js'
+import {
+  CARDS_NUMBER,
+  sentencesEN,
+  sentencesPT,
+} from '../../../../constants.js'
+import { getRandomizedSentences } from '../../../../utils.js'
+import { GameCard } from '../index.js'
+import { StyledGameCardBoard } from './StyledGameCardBoard.js'
+
+const GameCardBoard = ({ className, isPlaying, onGameWin }) => {
+  const [, i18n] = useTranslation()
+
+  const sentences =
+    i18n.language === 'en'
+      ? sentencesEN.slice(0, sentencesEN.length / 2)
+      : sentencesPT
+  const sentencesToDisplay = useMemo(
+    () => getRandomizedSentences(sentences).slice(0, CARDS_NUMBER / 2),
+    [sentences]
+  )
+
+  const [cards, setCards] = useState(
+    [...sentencesToDisplay, ...sentencesToDisplay].map(sentence => ({
+      sentence,
+      isSelected: false,
+      isMatched: false,
+    }))
+  )
+
+  const updateGameCards = useCallback(() => {
+    const selectedCards = cards.filter(card => card.isSelected)
+    if (selectedCards.length <= 1) {
+      return
+    }
+    const indexCardOne = cards.indexOf(selectedCards[0])
+    const indexCardTwo = cards.indexOf(selectedCards[1])
+
+    if (selectedCards[0].sentence === selectedCards[1].sentence) {
+      return setCards(prevCards => {
+        const newCards = [...prevCards]
+        newCards[indexCardOne].isSelected = false
+        newCards[indexCardOne].isMatched = true
+        newCards[indexCardTwo].isSelected = false
+        newCards[indexCardTwo].isMatched = true
+        return newCards
+      })
+    }
+
+    setTimeout(() => {
+      setCards(prevCards => {
+        const newCards = [...prevCards]
+        newCards[indexCardOne].isSelected = false
+        newCards[indexCardOne].isMatched = false
+        newCards[indexCardTwo].isSelected = false
+        newCards[indexCardTwo].isMatched = false
+        return newCards
+      })
+    }, 1000)
+  }, [cards])
+
+  const checkGameOver = useCallback(() => {
+    if (cards.every(cards => cards.isMatched)) {
+      onGameWin()
+    }
+  }, [cards, onGameWin])
+
+  useEffect(() => {
+    updateGameCards()
+    const timer = setTimeout(() => checkGameOver(), 500)
+
+    return () => clearTimeout(timer)
+  }, [cards, checkGameOver, updateGameCards])
+
+  const handleCardSelection = index => {
+    if (cards[index].isMatched) return
+
+    const selectedCards = cards.filter(card => card.isSelected)
+    if (selectedCards.length >= 2) {
+      return
+    }
+
+    return setCards(prevCards =>
+      prevCards.map((card, cardIndex) =>
+        index === cardIndex
+          ? { sentence: card.sentence, isSelected: true, isMatched: false }
+          : card
+      )
+    )
+  }
+
+  return (
+    <StyledGameCardBoard className={className} isPlaying={isPlaying}>
+      {cards.map((card, index) => (
+        <GameCard
+          key={`card-${index}`}
+          sentence={card.sentence}
+          isSelected={card.isSelected}
+          isMatched={card.isMatched}
+          gameCardBackImage={GameCardBack}
+          onClick={() => handleCardSelection(index)}
+        />
+      ))}
+    </StyledGameCardBoard>
+  )
+}
+
+GameCardBoard.defaultProps = {
+  isPlaying: false,
+  className: '',
+  onGameWin: () => null,
+}
+
+export default GameCardBoard

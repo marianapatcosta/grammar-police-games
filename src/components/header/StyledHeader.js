@@ -32,6 +32,7 @@ export const StyledHeaderTitle = styled.h2`
   text-transform: uppercase;
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
+  user-select: none;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 130%;

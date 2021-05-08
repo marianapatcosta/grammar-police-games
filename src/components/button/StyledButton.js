@@ -9,8 +9,8 @@ export const StyledButton = styled.button`
   text-decoration: none;
   background-color: ${({ theme }) => theme.colors.orange};
   padding: 0.3rem;
-  color: ${({ theme }) => theme.colors.highlight};
-  border: 0.0625rem solid ${({ theme }) => theme.colors.highlight};
+  color: ${({ theme }) => theme.colors.font};
+  border: 0.0625rem solid ${({ theme }) => theme.colors.black};
   line-height: 1.1em;
   border-radius: 0.5rem;
   margin-left: 0.5rem;

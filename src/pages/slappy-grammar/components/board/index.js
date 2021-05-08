@@ -110,7 +110,6 @@ Board.defaultProps = {
   gameStage: '',
   score: 0,
   bestScore: 0,
-  initialBestScore: 0,
 }
 
 export default Board

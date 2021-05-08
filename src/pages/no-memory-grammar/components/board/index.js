@@ -2,47 +2,43 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Medal } from '../../../../assets/icons/index.js'
 import { GAME_STAGE } from '../../../../constants.js'
-import { isTouchScreen } from '../../../../utils.js'
+import { convertToMinutesAndSeconds, isTouchScreen } from '../../../../utils.js'
 import {
   StyledBoard,
   StyledBoardOver,
   StyledMedalWrapper,
   StyledBoardOverTitle,
   StyledResults,
-  StyledScore,
+  StyledTimeSpent,
 } from './StyledBoard.js'
 
-const Board = ({ gameStage, score, bestScore, className }) => {
-  const [t] = useTranslation()
+const Board = ({ gameStage, timeSpent, bestTime, className }) => {
+  const [t, i18n] = useTranslation()
   const isTouchStart = isTouchScreen() && gameStage === GAME_STAGE.START
+
+  const timeSpentInMInutesAndSeconds = convertToMinutesAndSeconds(timeSpent)
+  const strigifyTimeSpent = timeLeft =>
+    `${timeLeft.minutes < 10 ? `0${timeLeft.minutes}` : timeLeft.minutes}:${
+      timeLeft.seconds < 10 ? `0${timeLeft.seconds}` : timeLeft.seconds
+    }`
+  const timeSpentString = strigifyTimeSpent(timeSpentInMInutesAndSeconds)
+
+  const bestTimeInMinutesAndSeconds = convertToMinutesAndSeconds(bestTime)
+  const bestTimeString = strigifyTimeSpent(bestTimeInMinutesAndSeconds)
 
   const renderBoardStart = () =>
     isTouchScreen() ? (
       <>
         <p>{t('game.howToPlay')}</p>
-        <p>{t('game.instructionsTap3')}</p>
-        <p>{t('game.instructionsTap4')}</p>
+        <p>{t('game.intructionNoMemoryGrammar')}</p>
+        <p>{t('game.instructionsTap5')}</p>
         <p>{t('game.instructionsStart3')}</p>
       </>
     ) : (
       <>
-        <p>
-          {t('game.instructionsSpace')}
-          <kbd>Space</kbd>
-          {t('game.instructionsSpace3')}
-        </p>
-        <p>
-          {t('game.instructionsArrows')}
-          <kbd>
-            <big>
-              <big>
-                {' '}
-                <big>&larr;&rarr;</big>
-              </big>
-            </big>
-          </kbd>
-          {t('game.instructionsArrows2')}
-        </p>
+        <p>{t('game.intructionNoMemoryGrammar')}</p>
+
+        <p>{t('game.instructionsClick')}</p>
         <p>
           {t('game.instructionsP')}
           <kbd>P</kbd>
@@ -75,15 +71,17 @@ const Board = ({ gameStage, score, bestScore, className }) => {
         </StyledMedalWrapper>
         <StyledResults>
           <div>
-            <StyledBoardOverTitle> {t('game.score')}</StyledBoardOverTitle>
-            <StyledScore>{score}</StyledScore>
+            <StyledBoardOverTitle> {t('game.time')}</StyledBoardOverTitle>
+            <StyledTimeSpent>{timeSpentString}</StyledTimeSpent>
           </div>
           <div>
             <StyledBoardOverTitle>
-              {score > bestScore && <span>{t('game.new')}</span>}
-              {t('game.best')}
+              {timeSpent < bestTime && <span>{t('game.new')}</span>}
+              {t('game.bestTime')}
             </StyledBoardOverTitle>
-            <StyledScore>{score > bestScore ? score : bestScore}</StyledScore>
+            <StyledTimeSpent>
+              {timeSpent < bestTime ? timeSpentString : bestTimeString}
+            </StyledTimeSpent>
           </div>
         </StyledResults>
       </StyledBoardOver>
@@ -110,7 +108,11 @@ const Board = ({ gameStage, score, bestScore, className }) => {
   }
 
   return (
-    <StyledBoard isTouchStart={isTouchStart} className={className}>
+    <StyledBoard
+      isPT={i18n.language === 'pt'}
+      isTouchStart={isTouchStart}
+      className={className}
+    >
       {renderBoardContent()}
     </StyledBoard>
   )
@@ -118,8 +120,8 @@ const Board = ({ gameStage, score, bestScore, className }) => {
 
 Board.defaultProps = {
   gameStage: '',
-  score: 0,
-  bestScore: 0,
+  timeSpent: 0,
+  bestTime: 0,
 }
 
 export default Board

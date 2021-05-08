@@ -18,16 +18,14 @@ export const StyledBoard = styled.div`
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
   z-index: 1;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    height: 16.5rem;
+  @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+    width: 25rem;
   }
 
-  ${({ isPT }) =>
-    isPT &&
-    `   
-    @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-      width: 25rem;
-    }`}
+  @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+    height: 17rem;
+    width: 27rem;
+  }
 
   ${({ isTouchStart }) =>
     isTouchStart &&
@@ -35,7 +33,6 @@ export const StyledBoard = styled.div`
       width: 19.5rem;
       height: 10rem;
   `}
-
 
   p {
     margin-top: ${isTouchScreen() ? '0' : '1rem'};

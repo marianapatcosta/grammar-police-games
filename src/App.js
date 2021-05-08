@@ -3,7 +3,12 @@ import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 import { Header } from './components'
-import { GrammarInvaders, Home, SlappyGrammarGame } from './pages'
+import {
+  GrammarInvaders,
+  Home,
+  NoMemmoryGrammar,
+  SlappyGrammarGame,
+} from './pages'
 import basic from './themes/basic'
 import { GlobalStyle } from './themes/global-style'
 import { StyledMain, StyledFooter, StyledLink } from './StyledApp.js'
@@ -22,6 +27,9 @@ const App = () => {
       </Route>
       <Route path='/grammar-invaders' exact>
         <GrammarInvaders />
+      </Route>
+      <Route path='/no-memory-grammar' exact>
+        <NoMemmoryGrammar />
       </Route>
       <Redirect to='/' />
     </Switch>

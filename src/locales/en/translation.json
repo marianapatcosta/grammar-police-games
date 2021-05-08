@@ -2,13 +2,15 @@
   "game": {
     "back": "back",
     "best": "best score",
+    "bestTime": "best time",
     "cancel": "cancel",
     "gameOver": "Game Over",
     "getReady": "Get Ready",
     "howToPlay": "How to play:",
     "instructionsSpace": "Press ",
-    "instructionsSpace2": " key to fly higher",
-    "instructionsSpace3": " key to shoot",
+    "instructionsSpace2": " key or click to fly higher",
+    "instructionsSpace3": " key or click to shoot",
+    "instructionsClick": "Click in a card to turn it",
     "instructionsArrows": "Press ",
     "instructionsArrows2": " key to move the space ship",
     "instructionsP": "Press ",
@@ -23,7 +25,9 @@
     "instructionsTap2": "Tap to fly higher",
     "instructionsTap3": "Tap to shoot",
     "instructionsTap4": "Tap to move the space ship",
+    "instructionsTap5": "Tap a card to turn it",
     "instructionsStart3": "Tap to start playing!",
+    "intructionNoMemoryGrammar": "Select 2 cards at a time until all of them are matched",
     "medal": "medal",
     "new": "new",
     "ok": "ok",
@@ -33,11 +37,16 @@
     "quitMessage": "Are you sure you want to quit?",
     "restart": "play again",
     "score": "score",
+    "time": "time",
     "won": "You won!!!"
   },
   "grammarInvaders": {
     "title": "Grammar Invaders",
     "description": "Based on the well-known Space Invaders game"
+  },
+  "noMemoryGrammar": {
+    "title": "No Memory Grammar",
+    "description": "Based on the well-known Memory Game"
   },
   "header": {
     "title": "Grammar Police Games"
@@ -49,7 +58,7 @@
     "authorName": "Mariana Costa",
     "developedBy": "Design and developed by",
     "github": "https://github.com/marianapatcosta",
-    "linkedin": "https://www.linkedin.com/in/marianapatcosta/"
+    "linkedin": "https://www.linkedin.com/in/marianapatcosta"
   },
   "slappyGrammar": {
     "title": "Slappy Grammar",
