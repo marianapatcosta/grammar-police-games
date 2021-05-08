@@ -226,7 +226,7 @@ const Game = () => {
           </StyledButtonWrapper>
         </StyledGameHeader>
         <StyledGamePlayground onClick={onGameClick}>
-          <GameCardBoard isPlaying={isPlaying} onGameWin={onGameWin} />
+          <GameCardBoard gameStage={gameStage} onGameWin={onGameWin} />
           {isGameActive && (
             <StyledGameData>
               <StyledTimer>{`${
