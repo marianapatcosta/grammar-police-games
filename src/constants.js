@@ -1,5 +1,9 @@
 import { Portugal, Uk } from './assets/icons'
-import { GrammarInvaders, SlappyGrammar } from './assets/images'
+import {
+  GrammarInvaders,
+  NoMemoryGrammar,
+  SlappyGrammar,
+} from './assets/images'
 
 export const locales = [
   {
@@ -17,6 +21,7 @@ export const locales = [
 export const GAMES = {
   SLAPPY_GRAMMAR: 'slappyGrammar',
   GRAMMAR_INVADERS: 'grammarInvaders',
+  NO_MEMORY_GRAMMAR: 'noMemoryGrammar',
 }
 
 export const GAME_STAGE = {
@@ -36,6 +41,11 @@ export const DIRECTIONS = {
   DOWN: 'down',
 }
 
+export const ORIENTATIONS = {
+  LANDSCAPE: 'landscape',
+  PORTRAIT: 'portrait',
+}
+
 export const gamesMetadata = [
   {
     id: GAMES.SLAPPY_GRAMMAR,
@@ -46,6 +56,11 @@ export const gamesMetadata = [
     id: GAMES.GRAMMAR_INVADERS,
     imageSrc: GrammarInvaders,
     path: 'grammar-invaders',
+  },
+  {
+    id: GAMES.NO_MEMORY_GRAMMAR,
+    imageSrc: NoMemoryGrammar,
+    path: 'no-memory-grammar',
   },
 ]
 
@@ -145,6 +160,8 @@ export const sentencesPT = [
   'Lembras-te-me que tenho que tratar disso.',
   'Jantas te bem?',
   'Olha para o que fases!',
+  'Isso é o insensial!.',
+  'Não se encomode com isso.',
 ]
 
 export const sentencesEN = [
@@ -162,7 +179,7 @@ export const sentencesEN = [
   'Something is missing in my hart.',
   'I’m board.',
   'I like sweat tea.',
-  'Make the dfferance.',
+  'Make the differance.',
   'No smoking aloud.',
   'It is a hand zone section.',
   'They go to they’re office.',
@@ -178,7 +195,7 @@ export const sentencesEN = [
   'Something is missing in my hart.',
   'I’m board.',
   'I like sweat tea.',
-  'Make the dfferance.',
+  'Make the differance.',
   'No smoking aloud.',
   'Your the best!',
 ]
@@ -271,3 +288,11 @@ export const BULLET_WIDTH = 0.45
 export const BULLET_TOP = GAME_HEIGHT - SPACE_SHIP_HEIGHT
 
 export const ENEMY_HIT_TIME_INTERVAL = 300 // in ms
+
+// No Memory Grammar
+
+export const MEMORY_GAME_HEIGHT = window.innerWidth > 880 && 40
+
+export const CARDS_NUMBER = 24
+
+export const GAME_TIME = 300000 // in ms

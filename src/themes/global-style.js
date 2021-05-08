@@ -99,7 +99,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   * :focus {
-      outline: 0.125rem solid ${({ theme }) => theme.colors.highlight};
+      outline: 0.125rem solid ${({ theme }) => theme.colors.font};
   }
 
   * :focus:not(:focus-visible) {

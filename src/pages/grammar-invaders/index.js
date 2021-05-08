@@ -96,6 +96,7 @@ const Game = () => {
       [GAME_STAGE.PLAY]: () => setGameStage(GAME_STAGE.PAUSE),
       [GAME_STAGE.PAUSE]: () => setGameStage(GAME_STAGE.PLAY),
       [GAME_STAGE.OVER]: () => setGameStage(GAME_STAGE.START),
+      [GAME_STAGE.WON]: () => setGameStage(GAME_STAGE.START),
     }
     !!clickHandlers[gameStage] && clickHandlers[gameStage]()
   }, [gameStage])
@@ -143,6 +144,7 @@ const Game = () => {
       [GAME_STAGE.START]: () => setGameStage(GAME_STAGE.PLAY),
       [GAME_STAGE.PLAY]: spaceShip.current.shoot,
       [GAME_STAGE.OVER]: () => setGameStage(GAME_STAGE.START),
+      [GAME_STAGE.WON]: () => setGameStage(GAME_STAGE.START),
     }
     clickHandlers[gameStage] && clickHandlers[gameStage]()
   }
@@ -225,7 +227,7 @@ const Game = () => {
 
         if (!enemiesData?.length) {
           setGameStage(GAME_STAGE.WON)
-          gameWonSound.play()
+          hasAudio && gameWonSound.play()
           findBestScore()
           return clearInterval(timerId)
         }

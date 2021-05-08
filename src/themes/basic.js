@@ -25,6 +25,7 @@ const basic = {
     lightGray: '#e6e6e6',
     gray: '#cfcccc',
     font: '#343a40',
+    disabled: '#aaaaaa',
   },
   fonts: {
     primary: 'PTSerif, serif',

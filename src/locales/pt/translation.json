@@ -2,13 +2,15 @@
   "game": {
     "back": "voltar",
     "best": "melhor resultado",
+    "bestTime": "melhor tempo",
     "cancel": "cancelar",
     "gameOver": "Fim do Jogo",
     "getReady": "Prepara-te",
     "howToPlay": "Como jogar:",
     "instructionsSpace": "Pressiona ",
-    "instructionsSpace2": " para voar mais alto",
-    "instructionsSpace3": " para disparar",
+    "instructionsSpace2": " ou clica para voar mais alto",
+    "instructionsSpace3": " ou clica para disparar",
+    "instructionsClick": "Clica numa carta para a virar",
     "instructionsArrows": "Pressiona ",
     "instructionsArrows2": " para mover a nave espacial",
     "instructionsP": "Pressiona ",
@@ -23,7 +25,9 @@
     "instructionsTap2": "Toca para voar mais alto",
     "instructionsTap3": "Toca para disparar",
     "instructionsTap4": "Toca para mover a nave espacial",
+    "instructionsTap5": "Toca numa carta para a virar",
     "instructionsStart3": "Toca para jogar!",
+    "intructionNoMemoryGrammar": "Seleciona 2 cartas de cada vez para serem todas emparelhadas",
     "medal": "medalha",
     "new": "novo",
     "ok": "ok",
@@ -33,11 +37,16 @@
     "quitMessage": "Tens a certeza que queres desistir?",
     "restart": "jogar novamente",
     "score": "resultado",
+    "time": "tempo",
     "won": "Ganhaste!!!"
   },
   "grammarInvaders": {
     "title": "Grammar Invaders",
     "description": "Baseado no popular jogo Space Invaders"
+  },
+  "noMemoryGrammar": {
+    "title": "No Memory Grammar",
+    "description": "Baseado no popular Jogo de Memória"
   },
   "header": {
     "title": "Jogos da Policia da Gramatica"

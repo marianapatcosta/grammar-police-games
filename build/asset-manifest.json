@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/grammar-police-games/static/js/main.fcdd35b8.chunk.js",
-    "main.js.map": "/grammar-police-games/static/js/main.fcdd35b8.chunk.js.map",
+    "main.js": "/grammar-police-games/static/js/main.9471690e.chunk.js",
+    "main.js.map": "/grammar-police-games/static/js/main.9471690e.chunk.js.map",
     "runtime-main.js": "/grammar-police-games/static/js/runtime-main.f9a675a3.js",
     "runtime-main.js.map": "/grammar-police-games/static/js/runtime-main.f9a675a3.js.map",
     "static/js/2.4e0e2758.chunk.js": "/grammar-police-games/static/js/2.4e0e2758.chunk.js",
@@ -42,7 +42,7 @@
     "static/media/space-ship.d30cab40.png": "/grammar-police-games/static/media/space-ship.d30cab40.png",
     "static/media/space.3d9feaec.jpeg": "/grammar-police-games/static/media/space.3d9feaec.jpeg",
     "static/media/tagtype-freefont.8fe87b11.ttf": "/grammar-police-games/static/media/tagtype-freefont.8fe87b11.ttf",
-    "static/media/united-kingdom.7bb03f7e.svg": "/grammar-police-games/static/media/united-kingdom.7bb03f7e.svg",
+    "static/media/united-kingdom.fcd4b001.svg": "/grammar-police-games/static/media/united-kingdom.fcd4b001.svg",
     "static/media/unmute.941a1bad.svg": "/grammar-police-games/static/media/unmute.941a1bad.svg",
     "static/media/urban-decay.6c98046e.ttf": "/grammar-police-games/static/media/urban-decay.6c98046e.ttf",
     "static/media/wall-background.498e03da.svg": "/grammar-police-games/static/media/wall-background.498e03da.svg",
@@ -51,6 +51,6 @@
   "entrypoints": [
     "static/js/runtime-main.f9a675a3.js",
     "static/js/2.4e0e2758.chunk.js",
-    "static/js/main.fcdd35b8.chunk.js"
+    "static/js/main.9471690e.chunk.js"
   ]
 }

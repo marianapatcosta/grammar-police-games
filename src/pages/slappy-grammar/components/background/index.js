@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   BACKGROUND_TIME_INTERVAL,
@@ -17,9 +17,67 @@ const Background = ({ sentencesNumber, gameStage }) => {
   const [, i18n] = useTranslation()
 
   const [sentencesToDisplay, setSentencesToDisplay] = useState([])
-  const [sentencesStyle, setSentencesStyle] = useState([])
   const isPlaying = gameStage === GAME_STAGE.PLAY
   const sentences = i18n.language === 'en' ? sentencesEN : sentencesPT
+
+  const getRandomStyle = () => ({
+    color: graffitiColors[getRandomInt(0, graffitiColors.length)],
+    fontFamily: graffitiFonts[getRandomInt(0, graffitiFonts.length)],
+    biggerShadow: Math.random() < 0.3,
+  })
+
+  const sentencesStyle = [
+    {
+      top: '9rem',
+      left: `${2 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '7.5rem',
+      left: `${30 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '20rem',
+      left: `${5 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '13rem',
+      left: `${24 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '22rem',
+      left: `${29 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '9rem',
+      left: `${57 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '7rem',
+      left: `${85 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '20rem',
+      left: `${60 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '13rem',
+      left: `${90 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+    {
+      top: '22rem',
+      left: `${85 + GAME_WIDTH}rem`,
+      ...getRandomStyle(),
+    },
+  ]
 
   useEffect(() => {
     let timerId
@@ -39,70 +97,6 @@ const Background = ({ sentencesNumber, gameStage }) => {
     }
     return () => clearTimeout(timerId)
   }, [isPlaying, sentences, sentencesNumber, gameStage])
-
-  const getRandomStyle = useCallback(
-    () => ({
-      color: graffitiColors[getRandomInt(0, graffitiColors.length)],
-      fontFamily: graffitiFonts[getRandomInt(0, graffitiFonts.length)],
-      biggerShadow: Math.random() < 0.3,
-    }),
-    []
-  )
-
-  useEffect(() => {
-    setSentencesStyle([
-      {
-        top: '9rem',
-        left: `${2 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '7.5rem',
-        left: `${30 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '20rem',
-        left: `${5 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '13rem',
-        left: `${24 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '22rem',
-        left: `${29 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '9rem',
-        left: `${57 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '7rem',
-        left: `${85 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '20rem',
-        left: `${60 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '13rem',
-        left: `${90 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-      {
-        top: '22rem',
-        left: `${85 + GAME_WIDTH}rem`,
-        ...getRandomStyle(),
-      },
-    ])
-  }, [sentencesToDisplay, getRandomStyle])
 
   return (
     <StyledBackground isPlaying={isPlaying}>

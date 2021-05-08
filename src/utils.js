@@ -1,3 +1,6 @@
+import { KEYBOARD_CODES } from './constants'
+const { SPACE_KEY, ENTER_KEY } = KEYBOARD_CODES
+
 export const getRandomInt = (min, max) => {
   min = Math.ceil(min)
   max = Math.floor(max)
@@ -20,3 +23,16 @@ export const getRandomizedSentences = sentences => {
 }
 
 export const isTouchScreen = () => window.matchMedia('(hover: none)').matches
+
+export const isEventValid = event =>
+  event.type === 'click' || event.code === SPACE_KEY || event.code === ENTER_KEY
+
+export const convertToMilliseconds = timeInMinutesAndSeconds => {
+  const { minutes, seconds } = timeInMinutesAndSeconds
+  return minutes * 60 * 1000 + seconds * 1000
+}
+
+export const convertToMinutesAndSeconds = timeInMilliseconds => ({
+  minutes: Math.floor((timeInMilliseconds / 1000 / 60) % 60),
+  seconds: Math.floor((timeInMilliseconds / 1000) % 60),
+})
