@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { GameCardBack } from '../../../../assets/images/index.js'
 import {
   CARDS_NUMBER,
+  GAME_STAGE,
   sentencesEN,
   sentencesPT,
 } from '../../../../constants.js'
@@ -10,25 +11,29 @@ import { getRandomizedSentences } from '../../../../utils.js'
 import { GameCard } from '../index.js'
 import { StyledGameCardBoard } from './StyledGameCardBoard.js'
 
-const GameCardBoard = ({ className, isPlaying, onGameWin }) => {
+const GameCardBoard = ({ className, gameStage, onGameWin }) => {
   const [, i18n] = useTranslation()
+  const [cards, setCards] = useState([])
 
-  const sentences =
-    i18n.language === 'en'
-      ? sentencesEN.slice(0, sentencesEN.length / 2)
-      : sentencesPT
-  const sentencesToDisplay = useMemo(
-    () => getRandomizedSentences(sentences).slice(0, CARDS_NUMBER / 2),
-    [sentences]
-  )
+  useEffect(() => {
+    if (gameStage !== GAME_STAGE.START) return
+    const sentences =
+      i18n.language === 'en'
+        ? sentencesEN.slice(0, sentencesEN.length / 2)
+        : sentencesPT
 
-  const [cards, setCards] = useState(
-    [...sentencesToDisplay, ...sentencesToDisplay].map(sentence => ({
-      sentence,
-      isSelected: false,
-      isMatched: false,
-    }))
-  )
+    const sentencesToDisplay = getRandomizedSentences(sentences).slice(
+      0,
+      CARDS_NUMBER / 2
+    )
+    setCards(
+      [...sentencesToDisplay, ...sentencesToDisplay].map(sentence => ({
+        sentence,
+        isSelected: false,
+        isMatched: false,
+      }))
+    )
+  }, [gameStage, i18n.language])
 
   const updateGameCards = useCallback(() => {
     const selectedCards = cards.filter(card => card.isSelected)
@@ -92,7 +97,10 @@ const GameCardBoard = ({ className, isPlaying, onGameWin }) => {
   }
 
   return (
-    <StyledGameCardBoard className={className} isPlaying={isPlaying}>
+    <StyledGameCardBoard
+      className={className}
+      isPlaying={gameStage === GAME_STAGE.PLAY}
+    >
       {cards.map((card, index) => (
         <GameCard
           key={`card-${index}`}
@@ -108,7 +116,7 @@ const GameCardBoard = ({ className, isPlaying, onGameWin }) => {
 }
 
 GameCardBoard.defaultProps = {
-  isPlaying: false,
+  ganeStage: '',
   className: '',
   onGameWin: () => null,
 }
