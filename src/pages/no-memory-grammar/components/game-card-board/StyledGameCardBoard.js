@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledGameCardBoard = styled.ul`
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 7rem);
+  grid-template-columns: repeat(auto-fit, 6.5rem);
   grid-template-rows: repeat(auto-fit, 5rem);
   grid-column-gap: 0.3rem;
   grid-row-gap: 0.3rem;
