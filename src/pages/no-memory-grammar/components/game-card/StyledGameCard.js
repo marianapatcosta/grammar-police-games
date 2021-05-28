@@ -43,7 +43,7 @@ const loading = keyframes`
 export const StyledGameCardWrapper = styled.li`
   list-style: none;
   height: 5rem;
-  width: 7rem;
+  width: 6.5rem;
   position: relative;
   transform-style: preserve-3d;
   animation: ${bounce} 1.2s ease-in-out;

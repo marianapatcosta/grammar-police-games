@@ -1,13 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { GameCardBack } from '../../../../assets/images/index.js'
+import {
+  GameCardBack,
+  GameCardBackLandscape,
+} from '../../../../assets/images/index.js'
 import {
   CARDS_NUMBER,
   GAME_STAGE,
   sentencesEN,
   sentencesPT,
 } from '../../../../constants.js'
-import { getRandomizedSentences } from '../../../../utils.js'
+import { getRandomizedSentences, isTouchScreen } from '../../../../utils.js'
 import { GameCard } from '../index.js'
 import { StyledGameCardBoard } from './StyledGameCardBoard.js'
 
@@ -107,7 +110,9 @@ const GameCardBoard = ({ className, gameStage, onGameWin }) => {
           sentence={card.sentence}
           isSelected={card.isSelected}
           isMatched={card.isMatched}
-          gameCardBackImage={GameCardBack}
+          gameCardBackImage={
+            isTouchScreen() ? GameCardBackLandscape : GameCardBack
+          }
           onClick={() => handleCardSelection(index)}
         />
       ))}

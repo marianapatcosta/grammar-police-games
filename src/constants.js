@@ -162,6 +162,8 @@ export const sentencesPT = [
   'Olha para o que fases!',
   'Isso é o insensial!.',
   'Não se encomode com isso.',
+  'São pequenos promenores.',
+  'Chegamos abocado.',
 ]
 
 export const sentencesEN = [
