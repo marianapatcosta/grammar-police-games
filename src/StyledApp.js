@@ -6,7 +6,7 @@ export const StyledMain = styled.main`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding-top: 6rem;
-    min-height: calc(100vh - 9.5rem);
+    min-height: calc(100vh - 10rem);
   }
 `
 
