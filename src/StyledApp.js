@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const StyledMain = styled.main`
   padding-top: 4rem;
-  min-height: calc(100vh - 7rem);
+  min-height: calc(100vh - 6rem);
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding-top: 6rem;
-    min-height: calc(100vh - 10rem);
+    min-height: calc(100vh - 9rem);
   }
 `
 
@@ -16,7 +16,7 @@ export const StyledFooter = styled.footer`
   color: ${({ theme }) => theme.colors.white};
   -webkit-text-stroke: 0.063rem ${({ theme }) => theme.colors.font};
   text-transform: uppercase;
-  height: 3rem;
+  height: 2rem;
   font-size: 50%;
   padding: 1.5rem 0 0.625rem;
   box-sizing: border-box;
@@ -25,7 +25,7 @@ export const StyledFooter = styled.footer`
   align-items: center;
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    height: 4rem;
+    height: 3rem;
   }
 
   p:first-child {

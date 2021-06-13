@@ -14,8 +14,9 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'PTSerif';
     src: local('PTSerif'),
-      url(${PTSerif}) format('truetype');
+    url(${PTSerif}) format('truetype');
     font-weight: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -23,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('June Bug'),
     url(${JuneBug}) format('truetype');
     font-weight: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -30,6 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Blow Brush'),
     url(${BlowBrush}) format('truetype');
     font-weight: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -37,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Don Graffiti'),
     url(${DonGraffiti}) format('opentype');
     font-weight: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -44,6 +48,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Grizzly Attack'),
     url(${GrizzlyAttack}) format('opentype');
     font-weight: normal;
+    font-display: swap;
   }
   
   @font-face {
@@ -52,6 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     url(${MerseyCowboy}) format('opentype');
     font-weight: normal;
     font-size: 50%;
+    font-display: swap;
   }
 
   @font-face {
@@ -59,6 +65,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Sprite Graffiti'),
     url(${SpriteGraffiti}) format('truetype');
     font-weight: normal;
+    font-display: swap;
   }
   
   @font-face {
@@ -66,6 +73,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Tag Type'),
     url(${TagType}) format('truetype');
     font-weight: normal;
+    font-display: swap;
   }
   
   @font-face {
@@ -73,6 +81,7 @@ export const GlobalStyle = createGlobalStyle`
     src: local('Urban Decay'),
     url(${UrbanDecay}) format('truetype');
     font-weight: normal;
+    font-display: swap;
   }
 
   body {

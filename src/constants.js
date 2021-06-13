@@ -293,7 +293,7 @@ export const ENEMY_HIT_TIME_INTERVAL = 300 // in ms
 
 // No Memory Grammar
 
-export const MEMORY_GAME_HEIGHT = window.innerWidth > 880 && 40
+export const MEMORY_GAME_HEIGHT = window.innerWidth > 880 && 38
 
 export const CARDS_NUMBER = 24
 
