@@ -31,7 +31,7 @@ export const StyledGameHeader = styled.div`
   -webkit-text-fill-color: ${({ theme }) => theme.colors.white};
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-    margin: 3rem 0 0;
+    margin: 1rem 0 0;
     padding: 1rem;
   }
 `
