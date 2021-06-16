@@ -194,6 +194,7 @@ export const sentencesEN = [
   'I like sweat tea.',
   'Make the differance.',
   'No smoking aloud.',
+  'Your the best!',
   'It is a hand zone section.',
   'They go to they’re office.',
   'It’s over their!',
