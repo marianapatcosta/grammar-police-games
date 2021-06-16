@@ -25,24 +25,27 @@ const GameCardBoard = ({ className, gameStage, onGameWin }) => {
 
   useEffect(() => {
     if (gameStage !== GAME_STAGE.START) return
-    const sentences =
+
+    let allSentences =
       i18n.language === 'en'
         ? sentencesEN.slice(0, sentencesEN.length / 2)
         : sentencesPT
 
-    const sentencesToDisplay = getRandomizedSentences(sentences).slice(
-      0,
-      CARDS_NUMBER / 2
-    )
+    const sentencesToDisplay = allSentences
+      .slice(0, CARDS_NUMBER / 2)
+      .map(sentence => ({
+        sentence,
+        isSelected: false,
+        isMatched: false,
+        color: cardColors[getRandomInt(0, cardColors.length)],
+      }))
 
-    const cards = sentencesToDisplay.map(sentence => ({
-      sentence,
-      isSelected: false,
-      isMatched: false,
-      color: cardColors[getRandomInt(0, cardColors.length)],
-    }))
+    const randomizedCards = getRandomizedSentences([
+      ...sentencesToDisplay,
+      ...sentencesToDisplay,
+    ])
 
-    setCards([...cards, ...cards])
+    setCards(randomizedCards)
   }, [gameStage, i18n.language])
 
   const updateGameCards = useCallback(() => {
