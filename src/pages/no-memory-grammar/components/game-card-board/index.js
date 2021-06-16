@@ -1,16 +1,21 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
   GameCardBack,
   GameCardBackLandscape,
 } from '../../../../assets/images/index.js'
 import {
+  cardColors,
   CARDS_NUMBER,
   GAME_STAGE,
   sentencesEN,
   sentencesPT,
 } from '../../../../constants.js'
-import { getRandomizedSentences, isTouchScreen } from '../../../../utils.js'
+import {
+  getRandomInt,
+  getRandomizedSentences,
+  isTouchScreen,
+} from '../../../../utils.js'
 import { GameCard } from '../index.js'
 import { StyledGameCardBoard } from './StyledGameCardBoard.js'
 
@@ -29,13 +34,15 @@ const GameCardBoard = ({ className, gameStage, onGameWin }) => {
       0,
       CARDS_NUMBER / 2
     )
-    setCards(
-      [...sentencesToDisplay, ...sentencesToDisplay].map(sentence => ({
-        sentence,
-        isSelected: false,
-        isMatched: false,
-      }))
-    )
+
+    const cards = sentencesToDisplay.map(sentence => ({
+      sentence,
+      isSelected: false,
+      isMatched: false,
+      color: cardColors[getRandomInt(0, cardColors.length)],
+    }))
+
+    setCards([...cards, ...cards])
   }, [gameStage, i18n.language])
 
   const updateGameCards = useCallback(() => {
@@ -93,7 +100,7 @@ const GameCardBoard = ({ className, gameStage, onGameWin }) => {
     return setCards(prevCards =>
       prevCards.map((card, cardIndex) =>
         index === cardIndex
-          ? { sentence: card.sentence, isSelected: true, isMatched: false }
+          ? { ...card, isSelected: true, isMatched: false }
           : card
       )
     )
@@ -106,10 +113,8 @@ const GameCardBoard = ({ className, gameStage, onGameWin }) => {
     >
       {cards.map((card, index) => (
         <GameCard
+          {...card}
           key={`card-${index}`}
-          sentence={card.sentence}
-          isSelected={card.isSelected}
-          isMatched={card.isMatched}
           gameCardBackImage={
             isTouchScreen() ? GameCardBackLandscape : GameCardBack
           }
@@ -121,7 +126,7 @@ const GameCardBoard = ({ className, gameStage, onGameWin }) => {
 }
 
 GameCardBoard.defaultProps = {
-  ganeStage: '',
+  gameStage: '',
   className: '',
   onGameWin: () => null,
 }

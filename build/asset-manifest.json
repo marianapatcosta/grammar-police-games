@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/grammar-police-games/static/js/main.6448e697.chunk.js",
-    "main.js.map": "/grammar-police-games/static/js/main.6448e697.chunk.js.map",
+    "main.js": "/grammar-police-games/static/js/main.f28c4f69.chunk.js",
+    "main.js.map": "/grammar-police-games/static/js/main.f28c4f69.chunk.js.map",
     "runtime-main.js": "/grammar-police-games/static/js/runtime-main.f9a675a3.js",
     "runtime-main.js.map": "/grammar-police-games/static/js/runtime-main.f9a675a3.js.map",
     "static/js/2.8a0c1c91.chunk.js": "/grammar-police-games/static/js/2.8a0c1c91.chunk.js",
@@ -34,7 +34,7 @@
     "static/media/medal.f66e5c23.svg": "/grammar-police-games/static/media/medal.f66e5c23.svg",
     "static/media/music-box-monster.1efc4a90.mp3": "/grammar-police-games/static/media/music-box-monster.1efc4a90.mp3",
     "static/media/mute.7cfd2fe7.svg": "/grammar-police-games/static/media/mute.7cfd2fe7.svg",
-    "static/media/no-memory-grammar.e781622f.gif": "/grammar-police-games/static/media/no-memory-grammar.e781622f.gif",
+    "static/media/no-memory-grammar.fd79fc4b.gif": "/grammar-police-games/static/media/no-memory-grammar.fd79fc4b.gif",
     "static/media/obstacle.f27a322e.png": "/grammar-police-games/static/media/obstacle.f27a322e.png",
     "static/media/pause.c18fa9da.svg": "/grammar-police-games/static/media/pause.c18fa9da.svg",
     "static/media/play.3a767d43.svg": "/grammar-police-games/static/media/play.3a767d43.svg",
@@ -54,6 +54,6 @@
   "entrypoints": [
     "static/js/runtime-main.f9a675a3.js",
     "static/js/2.8a0c1c91.chunk.js",
-    "static/js/main.6448e697.chunk.js"
+    "static/js/main.f28c4f69.chunk.js"
   ]
 }
