@@ -112,6 +112,17 @@ export const enemiesColors = [
   '#e7f4ee',
 ]
 
+export const cardColors = [
+  '#95c855',
+  '#e225a7',
+  '#05aef1',
+  '#f69501',
+  '#08f7fe',
+  '#fe53bb',
+  '#ce0000',
+  '#03045e',
+]
+
 export const sentencesPT = [
   'Há partida vai ser isso.',
   'Vou fazer anginhos na neve.',

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { ORIENTATIONS } from '../../../../constants'
 import { isEventValid } from '../../../../utils'
 import {
   StyledGameCardWrapper,
@@ -14,6 +13,7 @@ const GameCard = ({
   sentence,
   isSelected,
   isMatched,
+  color,
   gameCardBackImage,
   onClick,
 }) => {
@@ -25,7 +25,7 @@ const GameCard = ({
     return 'Press Space or Enter to select this card'
   }
 
-  const onKeyDown = e => isEventValid(e) && onClick()
+  const onKeyDown = event => isEventValid(event) && onClick()
 
   return (
     <StyledGameCardWrapper
@@ -34,11 +34,13 @@ const GameCard = ({
       onClick={onClick}
       onKeyDown={onKeyDown}
     >
-      <StyledGameCardFace isSeledctedOrMatched={isSelected || isMatched}>
-        <StyledGameCardSentence>{sentence}</StyledGameCardSentence>
+      <StyledGameCardFace isSelectedOrMatched={isSelected || isMatched}>
+        <StyledGameCardSentence style={{ color: color }}>
+          {sentence}
+        </StyledGameCardSentence>
       </StyledGameCardFace>
 
-      <StyledGameCard isSeledctedOrMatched={isSelected || isMatched}>
+      <StyledGameCard isSelectedOrMatched={isSelected || isMatched}>
         {!isLoaded && <StyledGameCardImagePlaceholder />}
         <StyledGameCardImage
           isLoaded={isLoaded}

@@ -95,8 +95,8 @@ export const StyledGameCard = styled.div`
     border: 0.125rem solid ${({ theme }) => theme.colors.font};
   }
 
-  ${({ isSeledctedOrMatched }) =>
-    isSeledctedOrMatched &&
+  ${({ isSelectedOrMatched }) =>
+    isSelectedOrMatched &&
     `
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
@@ -115,8 +115,8 @@ export const StyledGameCardFace = styled(StyledGameCard)`
   -o-transform: rotateY(180deg);
   cursor: default;
 
-  ${({ isSeledctedOrMatched }) =>
-    isSeledctedOrMatched &&
+  ${({ isSelectedOrMatched }) =>
+    isSelectedOrMatched &&
     `
   transform: rotateY(0deg);
   -webkit-transform: rotateY(0deg);
