@@ -86,7 +86,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
       width: 100vw;
-      height: 100vh;
       font-size: 0.85rem;
       font-weight: 300;
       text-rendering: optimizeLegibility;
@@ -97,8 +96,17 @@ export const GlobalStyle = createGlobalStyle`
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
 
+      @media (min-width: ${({ theme }) => theme.breakpoints.xs}) {
+        height: 100vh;
+      }
+
       @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-          font-size: 1rem;
+        font-size: 1rem;
+      }
+
+      #root {
+        height: 100%;
+        width: 100%;
       }
   }
 

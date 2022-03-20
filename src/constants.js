@@ -1,9 +1,14 @@
 import { Portugal, Uk } from './assets/icons'
 import {
+  GrammarInvaders as GrammarInvadersImg,
+  NoMemoryGrammar as NoMemoryGrammarImg,
+  SlappyGrammar as SlappyGrammarImg,
+} from './assets/images'
+import {
   GrammarInvaders,
   NoMemoryGrammar,
   SlappyGrammar,
-} from './assets/images'
+} from './assets/videos'
 
 export const locales = [
   {
@@ -49,17 +54,20 @@ export const ORIENTATIONS = {
 export const gamesMetadata = [
   {
     id: GAMES.SLAPPY_GRAMMAR,
-    imageSrc: SlappyGrammar,
+    imageSrc: SlappyGrammarImg,
+    videoSrc: SlappyGrammar,
     path: 'slappy-grammar',
   },
   {
     id: GAMES.GRAMMAR_INVADERS,
-    imageSrc: GrammarInvaders,
+    imageSrc: GrammarInvadersImg,
+    videoSrc: GrammarInvaders,
     path: 'grammar-invaders',
   },
   {
     id: GAMES.NO_MEMORY_GRAMMAR,
-    imageSrc: NoMemoryGrammar,
+    imageSrc: NoMemoryGrammarImg,
+    videoSrc: NoMemoryGrammar,
     path: 'no-memory-grammar',
   },
 ]
@@ -175,6 +183,7 @@ export const sentencesPT = [
   'Não se encomode com isso.',
   'São pequenos promenores.',
   'Chegamos abocado.',
+  'Sinseramente não acho isso.'
 ]
 
 export const sentencesEN = [

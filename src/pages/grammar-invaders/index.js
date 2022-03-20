@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
   Back,
   Heart,
@@ -46,7 +46,7 @@ import { isTouchScreen } from '../../utils'
 
 const Game = () => {
   const [t] = useTranslation()
-  const history = useHistory()
+  const navigate = useNavigate()
   const bestScore = useMemo(
     () => +localStorage.getItem('grammarInvadersBestScore') || 0,
     []
@@ -354,7 +354,7 @@ const Game = () => {
         </StyledGamePlayground>
         {!isTouchScreen() && (
           <StyledBackButton
-            onClick={() => history.push('/')}
+            onClick={() => navigate('/')}
             label={t('game.back')}
             icon={Back}
           />

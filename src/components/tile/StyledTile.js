@@ -29,16 +29,10 @@ export const StyledTile = styled.button`
 
 export const StyledTitle = styled.h4``
 
-export const StyledImage = styled.img`
+export const StyledVideo = styled.video`
   width: 90%;
   box-shadow: 0.25rem 0.25rem 0.7rem rgb(0, 0, 0, 0.7);
   border-radius: 0.25rem;
-  margin: 1rem 2rem;
-`
-
-export const StyledImagePlaceholder = styled.div`
-  width: 90%;
-  height: calc(90% / 1.58);
   margin: 1rem 2rem;
 `
 

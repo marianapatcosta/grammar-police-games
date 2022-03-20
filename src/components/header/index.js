@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { locales } from '../../constants'
 import { isTouchScreen } from '../../utils'
 import {
@@ -13,7 +13,7 @@ import {
 
 const Header = ({ title, className }) => {
   const [, i18n] = useTranslation()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const changeLanguage = useCallback(
     language => {
@@ -23,7 +23,7 @@ const Header = ({ title, className }) => {
     [i18n]
   )
 
-  const goToMenu = () => isTouchScreen() && history.push('/')
+  const goToMenu = () => isTouchScreen() && navigate('/')
 
   return (
     <StyledHeader className={className}>

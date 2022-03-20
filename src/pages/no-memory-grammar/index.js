@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { Back, Mute, Pause, Play, Quit, Unmute } from '../../assets/icons'
 import { Modal } from '../../components'
 import { GameCardBoard } from './components'
@@ -27,7 +27,7 @@ import {
 
 const Game = () => {
   const [t] = useTranslation()
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const bestTime = +localStorage.getItem('noMemoryGrammarBestTime') || GAME_TIME
   const [gameStage, setGameStage] = useState(GAME_STAGE.START)
@@ -52,9 +52,9 @@ const Game = () => {
   const toggleAudio = () => setHasAudio(prevHasAudio => !prevHasAudio)
 
   const findBestTime = useCallback(
-    (isQuiting = false) => {
+    (isQuitting = false) => {
       const currentTimeLeft = convertToMilliseconds(
-        isQuiting ? { minutes: 0, seconds: 0 } : timeLeft
+        isQuitting ? { minutes: 0, seconds: 0 } : timeLeft
       )
       const timeSpent = GAME_TIME - currentTimeLeft
       setTimeSpent(timeSpent)
@@ -120,10 +120,10 @@ const Game = () => {
   }
 
   const onGameOver = useCallback(
-    (isQuiting = false) => {
+    (isQuitting = false) => {
       hasAudio && gameOverSound.play()
       setGameStage(GAME_STAGE.OVER)
-      findBestTime(isQuiting)
+      findBestTime(isQuitting)
     },
     [gameOverSound, hasAudio, findBestTime]
   )
@@ -196,10 +196,10 @@ const Game = () => {
 
   const renderSubtitle = () => {
     const subtitles = {
-      [GAME_STAGE.START]: t('game.getReady'),
-      [GAME_STAGE.PAUSE]: t('game.paused'),
-      [GAME_STAGE.OVER]: t('game.gameOver'),
-      [GAME_STAGE.WON]: t('game.won'),
+      [GAME_STAGE.START]: 'game.getReady',
+      [GAME_STAGE.PAUSE]: 'game.paused',
+      [GAME_STAGE.OVER]: 'game.gameOver',
+      [GAME_STAGE.WON]: 'game.won',
     }
     return subtitles[gameStage] || ''
   }
@@ -241,7 +241,7 @@ const Game = () => {
             </StyledGameData>
           )}
           {gameStage !== GAME_STAGE.PLAY && (
-            <StyledGameSubtitle>{renderSubtitle()}</StyledGameSubtitle>
+            <StyledGameSubtitle>{t(renderSubtitle())}</StyledGameSubtitle>
           )}
           {!isGameActive && (
             <StyledBoard
@@ -251,14 +251,14 @@ const Game = () => {
             />
           )}
         </StyledGamePlayground>
-        {!isTouchScreen() && (
-          <StyledBackButton
-            onClick={() => history.push('/')}
-            label={t('game.back')}
-            icon={Back}
-          />
-        )}
       </StyledGame>
+      {!isTouchScreen() && (
+        <StyledBackButton
+          onClick={() => navigate('/')}
+          label={t('game.back')}
+          icon={Back}
+        />
+      )}
       {showModal && (
         <Modal
           size='small'
