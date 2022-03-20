@@ -1,6 +1,6 @@
 # Grammar Police Games
 
-This project is composed of 3 games based on the well-known games `Flappy Bird`, `Space Invaders` and `Memory Games` emphasizing common grammar mistakes, and was developed with React and Styled Components. This game is available in _Portuguese_ and _English_. Grammar Police Games can be accessed at [Grammar Police Games](https://marianapatcosta.github.io/grammar-police-games/)
+Grammar Police Games is a Progressive Web App composed of 3 games based on the well-known games `Flappy Bird`, `Space Invaders` and `Memory Games` emphasizing common grammar mistakes. This game is available in _Portuguese_ and _English_. , It was developed with React and Styled Components. Grammar Police Games can be accessed at [Grammar Police Games](https://marianapatcosta.github.io/grammar-police-games/)
 
 ### Available Scripts
 
@@ -17,11 +17,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
-
-#### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 #### `yarn build`
 

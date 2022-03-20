@@ -1,25 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
   StyledTile,
   StyledTitle,
-  StyledImage,
-  StyledImagePlaceholder,
+  StyledVideo,
   StyledDescription,
 } from './StyledTile.js'
 
-const Tile = ({ title, description, imageSrc, className, onClick }) => {
-  const [isLoaded, setIsLoaded] = useState(false)
-
+const Tile = ({
+  title,
+  description,
+  imageSrc,
+  videoSrc,
+  className,
+  onClick,
+}) => {
   return (
     <StyledTile className={className} onClick={onClick}>
       <StyledTitle>{title}</StyledTitle>
-      {!isLoaded && <StyledImagePlaceholder />}
-      <StyledImage
-        src={imageSrc}
-        alt={`${title}`}
-        loading='lazy'
-        onLoad={() => setIsLoaded(true)}
-      />
+      <StyledVideo loop autoPlay muted poster={imageSrc}>
+        <source src={videoSrc} type='video/mp4' />
+        Sorry, your browser doesn't support embedded videos.
+      </StyledVideo>
 
       <StyledDescription>{description}</StyledDescription>
     </StyledTile>

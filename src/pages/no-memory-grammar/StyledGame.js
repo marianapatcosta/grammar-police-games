@@ -18,6 +18,7 @@ export const StyledGame = styled.div`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     margin: 0 auto;
+    ${({ isGameActive }) => isGameActive && `margin: auto;`}
   }
 `
 

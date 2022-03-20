@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledHeader = styled.header`
-  position: fixed;
-  left: 0;
-  top: 0;
   padding: 0 0.5rem;
   box-sizing: border-box;
   height: 4rem;
@@ -21,7 +18,6 @@ export const StyledHeader = styled.header`
 
   @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
     padding: 0 4rem;
-    height: 6rem;
   }
 `
 
