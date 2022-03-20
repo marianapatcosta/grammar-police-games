@@ -2,6 +2,9 @@
 
 Grammar Police Games is a Progressive Web App composed of 3 games based on the well-known games `Flappy Bird`, `Space Invaders` and `Memory Games` emphasizing common grammar mistakes. This game is available in _Portuguese_ and _English_. , It was developed with React and Styled Components. Grammar Police Games can be accessed at [Grammar Police Games](https://marianapatcosta.github.io/grammar-police-games/)
 
+![grammar-police-games-overview](https://user-images.githubusercontent.com/43031902/124002371-8e120200-d9cd-11eb-9afe-7ef7ad1d2663.png)
+
+
 ### Available Scripts
 
 In the project directory, you can run:
